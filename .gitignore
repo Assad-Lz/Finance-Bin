@@ -3,3 +3,14 @@ finance-bin/.env
 finance-bin/package-lock.json
 finance-bin/package.json
 finance-bin/postcss.config.mjs
+node_modules/.bin/loose-envify
+.gitignore
+package-lock.json
+package.json
+node_modules/.package-lock.json
+node_modules/.bin/loose-envify.cmd
+node_modules/.bin/loose-envify.ps1
+node_modules/js-tokens/CHANGELOG.md
+node_modules
+node_modules/js-tokens/index.js
+.gitignore
