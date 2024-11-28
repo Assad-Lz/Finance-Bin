@@ -29,16 +29,12 @@ Este projeto visa oferecer uma solução intuitiva e poderosa para gerenciar sua
 ###  Entre em contato
 Sinta-se à vontade para entrar em contato caso tenha alguma dúvida ou sugestão.
 
-**[Seu nome ou nome da sua empresa]**
-[Seu email]
-[Link para seu LinkedIn]
+**Yssaky Assad Luz**
+assadyssaky@gmail.com
+https://www.linkedin.com/in/yssaky-assad-luz-4562b6236/
 
 ###  Links úteis
 * **Documentação do Next.js:** [link]
 * **Documentação do Prisma:** [link]
 
-**[Adicione aqui imagens ou GIFs demonstrando as principais funcionalidades da sua aplicação]**
 
-**[Se quiser, adicione uma seção com perguntas frequentes]**
-
-**[Adicione uma seção com agradecimentos a colaboradores ou patrocinadores]**
