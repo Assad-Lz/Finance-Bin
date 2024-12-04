@@ -42,6 +42,7 @@ import {
   TRANSACTION_PAYMENT_METHOD_OPTIONS,
   TRANSACTION_TYPE_OPTIONS,
 } from "../_constants/transaction";
+import { DatePicker } from "./ui/date-picker";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, {
@@ -109,6 +110,8 @@ const AddTransactionButton = () => {
                 </FormItem>
               )}
             />
+
+            {/*FormField dos Valores*/}
             <FormField
               control={form.control}
               name="amount"
@@ -122,6 +125,8 @@ const AddTransactionButton = () => {
                 </FormItem>
               )}
             />
+
+            {/*FormField dos tipos de transações*/}
             <FormField
               control={form.control}
               name="type"
@@ -149,6 +154,8 @@ const AddTransactionButton = () => {
                 </FormItem>
               )}
             />
+
+            {/*FormField das Categorias*/}
             <FormField
               control={form.control}
               name="category"
@@ -176,6 +183,8 @@ const AddTransactionButton = () => {
                 </FormItem>
               )}
             />
+
+            {/*FormField dos Metodos de Pagamento*/}
             <FormField
               control={form.control}
               name="paymentMethod"
@@ -203,10 +212,24 @@ const AddTransactionButton = () => {
                 </FormItem>
               )}
             />
-            <Button type="submit">Submit</Button>
+
+            {/*FormField da Data*/}
+            <FormField
+              control={form.control}
+              name="date"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Data</FormLabel>
+                  <DatePicker value={field.value} onChange={field.onChange} />
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <DialogFooter>
-              <Button variant="outline">Cancelar</Button>
-              <Button>Adicionar</Button>
+              <Button type="button" variant="outline">
+                Cancelar
+              </Button>
+              <Button type="submit">Adicionar</Button>
             </DialogFooter>
           </form>
         </Form>
