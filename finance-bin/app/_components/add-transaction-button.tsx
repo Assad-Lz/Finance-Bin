@@ -4,6 +4,7 @@ import { ArrowDownUpIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -65,8 +66,10 @@ const formSchema = z.object({
   }),
 });
 
+type FormSchema = z.infer<typeof formSchema>;
+
 const AddTransactionButton = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       amount: "",
@@ -78,10 +81,18 @@ const AddTransactionButton = () => {
     },
   });
 
-  const onSubmit = () => {};
+  const onSubmit = (data: FormSchema) => {
+    console.log(data);
+  };
 
   return (
-    <Dialog>
+    <Dialog
+      onOpenChange={(open) => {
+        if (!open) {
+          form.reset();
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <Button className="rounded-full font-bold">
           Adicionar Transação
@@ -226,9 +237,12 @@ const AddTransactionButton = () => {
               )}
             />
             <DialogFooter>
-              <Button type="button" variant="outline">
-                Cancelar
-              </Button>
+              <DialogClose asChild>
+                <Button type="button" variant="outline">
+                  Cancelar
+                </Button>
+              </DialogClose>
+
               <Button type="submit">Adicionar</Button>
             </DialogFooter>
           </form>
